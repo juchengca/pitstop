@@ -1,0 +1,7 @@
+node_modules
+.env
+client/dist/bundle.js
+client/dist/styles.css
+client/src/input.css
+.DS_Store
+data

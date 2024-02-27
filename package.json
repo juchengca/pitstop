@@ -1,0 +1,41 @@
+{
+  "name": "pitstop",
+  "version": "1.0.0",
+  "description": "",
+  "main": "webpack.config.js",
+  "scripts": {
+    "client-dev": "webpack --mode development --watch",
+    "server-dev": "nodemon ./server/index.js",
+    "daisy-dev": "npx tailwindcss -i client/src/input.css -o client/dist/styles.css --watch",
+    "build": "webpack --config webpack.config.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SDC-Team-Lilac/rpp2210-sdc-lilac-init.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SDC-Team-Lilac/rpp2210-sdc-lilac-init/issues"
+  },
+  "homepage": "https://github.com/SDC-Team-Lilac/rpp2210-sdc-lilac-init#readme",
+  "dependencies": {
+    "axios": "^1.6.7",
+    "dotenv": "^16.4.1",
+    "pg": "^8.11.3",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.21.4",
+    "@babel/preset-env": "^7.21.4",
+    "@babel/preset-react": "^7.22.15",
+    "babel-loader": "^9.1.2",
+    "daisyui": "^4.3.1",
+    "tailwindcss": "^3.3.5",
+    "webpack": "^5.79.0",
+    "webpack-cli": "^5.0.1",
+    "webpack-dev-server": "^4.13.2"
+  }
+}
