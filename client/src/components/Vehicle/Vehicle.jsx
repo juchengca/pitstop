@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import Carousel from './Carousel.jsx';
-import Info from './Info.jsx';
+import Specs from './Specs.jsx';
+import Maintenance from './Maintenance.jsx';
 
 const Vehicle = () => {
 
@@ -27,7 +28,11 @@ const Vehicle = () => {
       : null
       }
       <div>
-        <Info vehicleData={vehicleData}/>
+        <Specs vehicleData={vehicleData}/>
+      </div>
+      <hr className="my-4" />
+      <div>
+        <Maintenance vehicleData={vehicleData}/>
       </div>
     </div>
   )

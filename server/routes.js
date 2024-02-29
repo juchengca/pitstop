@@ -10,6 +10,7 @@ router.get('/', function (req, res) {
 router.get('/user', controllers.users.getOne);
 router.get('/vehicle', controllers.vehicles.getOne);
 router.get('/vehicles', controllers.vehicles.getAll);
+router.get('/service', controllers.vehicles.getService)
 
 // Export router to be used in index.js
 module.exports = router;
