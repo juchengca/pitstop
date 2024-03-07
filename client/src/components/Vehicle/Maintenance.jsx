@@ -29,14 +29,15 @@ const Maintenance = ({vehicleData}) => {
           <tr className="border-none">
             <th>Service</th>
             <th>Interval</th>
-            <th>Last Serviced Date</th>
-            <th>Last Serviced Mileage</th>
+            <th>Service Date</th>
+            <th>Service Mi</th>
+            <th>Due</th>
             <th>Due In</th>
           </tr>
         </thead>
         <tbody>
           {vehicleService.map((item, index) => (
-              <Row row={item} key={index}/>
+              <Row row={item} vehicleData={vehicleData} key={index}/>
               ))}
         </tbody>
       </table>
