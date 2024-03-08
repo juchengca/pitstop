@@ -1,24 +1,33 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { createRoot } from 'react-dom/client';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import TopBar from './components/TopBar/TopBar.jsx'
-import Garage from './components/Garage/Garage.jsx'
-import Vehicle from './components/Vehicle/Vehicle.jsx'
-import NavMenu from './components/Navigation/NavMenu.jsx'
+import NavMenu from './components/Navigation/NavMenu.jsx';
+import Garage from './components/Garage/Garage.jsx';
+import Vehicle from './components/Vehicle/Vehicle.jsx';
 
 const App = () => {
   return (
-    <div className="flex flex-col h-screen"> {/* Use flexbox layout with column direction */}
-      <TopBar />
-      <div className="flex flex-1"> {/* Container for NavMenu and Vehicle with flexible height */}
-        <NavMenu />
-        <div className="flex-1"> {/* Vehicle Page occupies remaining space */}
-          <Vehicle />
+    <BrowserRouter>
+      <div className="flex flex-col h-screen">
+        <TopBar />
+        <div className="flex flex-1">
+          <NavMenu />
+          <div className="flex-1">
+            <Routes>
+              <Route exact path="/" element={<Garage />} />
+              <Route path="/car" element={<Vehicle />} />
+            </Routes>
+          </div>
         </div>
       </div>
-    </div>
+    </BrowserRouter>
   );
-}
+};
 
 const container = document.getElementById('app');
 const root = createRoot(container);
-root.render(<App />);
+
+root.render(
+  <App />
+);
