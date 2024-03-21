@@ -16,6 +16,7 @@ CREATE TABLE users (
 CREATE TABLE vehicles (
   id SERIAL PRIMARY KEY,
   user_id INT,
+  nickname VARCHAR,
   make VARCHAR,
   model VARCHAR,
   year INT,
@@ -23,6 +24,7 @@ CREATE TABLE vehicles (
   color VARCHAR,
   mileage INT,
   motor VARCHAR,
+  transmission VARCHAR,
   type VARCHAR,
   reg_month INT,
   vin VARCHAR,
@@ -74,6 +76,14 @@ COPY services FROM '/Users/jccode/JCproj/pitstop/data/pitstop_data-services.csv'
 COPY user_photos FROM '/Users/jccode/JCproj/pitstop/data/pitstop_data-user_photos.csv' DELIMITERS ',' CSV header;
 COPY vehicle_photos FROM '/Users/jccode/JCproj/pitstop/data/pitstop_data-vehicle_photos.csv' DELIMITERS ',' CSV header;
 COPY notes FROM '/Users/jccode/JCproj/pitstop/data/pitstop_data-notes.csv' DELIMITERS ',' CSV header;
+*/
+
+/*
+DROP DATABASE pitstop;
+CREATE DATABASE pitstop;
+\c pitstop;
+DROP SCHEMA schema_name CASCADE;
+DROP TABLE table_name;
 */
 
 /*

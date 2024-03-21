@@ -4,6 +4,7 @@ module.exports = {
   getOne: (req, res) => {
     models.vehicles.getOne(req.query)
       .then((results) => {
+        console.log(results.rows[0]);
         res.status(200).send(results.rows[0]);
       })
       .catch((err) => {
@@ -19,6 +20,16 @@ module.exports = {
       .catch((err) => {
         res.status(500).send('ERROR GET vehicles');
         console.log('ERROR GET vehicles', err);
+      });
+  },
+  getService: (req, res) => {
+    models.vehicles.getService(req.query)
+      .then((results) => {
+        res.status(200).send(results.rows);
+      })
+      .catch((err) => {
+        res.status(500).send('ERROR GET service');
+        console.log('ERROR GET service', err);
       });
   }
 };
