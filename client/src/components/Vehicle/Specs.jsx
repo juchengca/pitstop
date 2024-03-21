@@ -66,7 +66,7 @@ const Specs = ({vehicleData}) => {
               <td><h3 className="text-xs font-bold">Type</h3>{vehicleData.type}</td>
               <td><h3 className="text-xs font-bold">Purchase Date</h3>
                 {moment(vehicleData.purchase_date).format('MMMM D, YYYY')} </td>
-              <td><h3 className="text-xs font-bold">Sold Date</h3>{vehicleData.sold_date ? vehicleData.sold_date : 'N/A'}</td>
+              <td><h3 className="text-xs font-bold">Sold Date</h3>{vehicleData.sold_date ? moment(vehicleData.sold_date).format('MMMM D, YYYY') : 'N/A'}</td>
             </tr>
           </tbody>
         </table>

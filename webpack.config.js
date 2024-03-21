@@ -6,6 +6,7 @@ const config = {
     entry: './client/src/index.jsx',
     output: {
         path: path.resolve(__dirname, './client/dist'),
+        publicPath: '/',
         filename: "bundle.js"
     },
     plugins: [
