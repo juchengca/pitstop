@@ -1,12 +1,26 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
+import Overview from './Overview.jsx';
 
 const Home = () => {
 
   var userID = 1;
 
   const [userData, setUserData] = useState([]);
+
+  const [vehiclesData, setVehiclesData] = useState([]);
+
+  useEffect(() => {
+    getVehiclesData();
+  }, []);
+
+  const getVehiclesData = () => {
+    axios.get('/vehicles', { params: { id: userID } })
+      .then((response) => {
+        setVehiclesData(response.data);
+      });
+  };
 
   useEffect(() => {
     getUserData();
@@ -24,8 +38,9 @@ const Home = () => {
   <div className="flex flex-col">
     <div style={{ display: 'flex', alignItems: 'center', marginLeft: '1.5rem' }}>
     <h2 className="text-xl font-bold mb-0">Welcome back, {userData.first_name}!</h2>
-    <Link to="/garage" className="btn btn-ghost text-xl" style={{ marginLeft: '1rem' }}>Enter Your Garage</Link>
     </div>
+    <hr className="my-4" />
+    <Overview vehiclesData={vehiclesData}/>
     <hr className="my-4" />
     <div style={{ display: 'flex', alignItems: 'center', marginLeft: '1.5rem' }}>
       <h2 className="text-xl font-bold mb-0">Reminders</h2>
