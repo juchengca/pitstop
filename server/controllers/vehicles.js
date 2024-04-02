@@ -31,5 +31,15 @@ module.exports = {
         res.status(500).send('ERROR GET service');
         console.log('ERROR GET service', err);
       });
+  },
+  getRemindersAll: (req, res) => {
+    models.vehicles.getRemindersAll(req.query)
+      .then((results) => {
+        res.status(200).send(results.rows);
+      })
+      .catch((err) => {
+        res.status(500).send('ERROR GET reminders all');
+        console.log('ERROR GET reminders all', err);
+      });
   }
 };
